@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="311" id="Ulx-FD-6VB" customClass="NewsTableViewCell" customModule="MyVk" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="311"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ulx-FD-6VB" id="8PY-UM-MVI">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="311"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-pN-mIv">
+                        <rect key="frame" x="3" y="3" width="365" height="305"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="its-l1-tpd">
+                                <rect key="frame" x="10" y="56.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvr-9B-JU8">
+                                <rect key="frame" x="10" y="276" width="100" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iw9-Me-6d9" customClass="AvatarView" customModule="MyVk" customModuleProvider="target">
+                                <rect key="frame" x="10" y="9" width="40" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iw9-Me-6d9" secondAttribute="height" multiplier="1:1" id="n1c-da-vCg"/>
+                                    <constraint firstAttribute="width" constant="40" id="pW2-Fd-UK8"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя автора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRY-T5-a93">
+                                <rect key="frame" x="60" y="19" width="92.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gus-iu-Se0">
+                                <rect key="frame" x="10" y="96.5" width="345" height="174.5"/>
+                            </imageView>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nxM-pe-NXq" customClass="LikeView" customModule="MyVk" customModuleProvider="target">
+                                <rect key="frame" x="295" y="276" width="60" height="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageNoLike" value="heart" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageHaveLike" value="heart.fill" catalog="system"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gus-iu-Se0" firstAttribute="leading" secondItem="Cmh-pN-mIv" secondAttribute="leading" constant="10" id="2Hk-2u-nky"/>
+                            <constraint firstItem="bvr-9B-JU8" firstAttribute="top" secondItem="Gus-iu-Se0" secondAttribute="bottom" constant="5" id="2V1-X3-g5X"/>
+                            <constraint firstItem="bRY-T5-a93" firstAttribute="leading" secondItem="iw9-Me-6d9" secondAttribute="trailing" constant="10" id="6qc-sV-a5q"/>
+                            <constraint firstItem="iw9-Me-6d9" firstAttribute="leading" secondItem="Cmh-pN-mIv" secondAttribute="leading" constant="10" id="DeC-K1-dsE"/>
+                            <constraint firstItem="nxM-pe-NXq" firstAttribute="leading" secondItem="Cmh-pN-mIv" secondAttribute="leading" constant="295" id="GdV-Yr-Ucp"/>
+                            <constraint firstAttribute="trailing" secondItem="Gus-iu-Se0" secondAttribute="trailing" constant="10" id="LMK-Te-th6"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="its-l1-tpd" secondAttribute="trailing" constant="10" id="OvL-f9-C69"/>
+                            <constraint firstItem="its-l1-tpd" firstAttribute="top" secondItem="bRY-T5-a93" secondAttribute="bottom" constant="17" id="QBF-jW-VGy"/>
+                            <constraint firstItem="its-l1-tpd" firstAttribute="leading" secondItem="Cmh-pN-mIv" secondAttribute="leading" constant="10" id="QMd-hP-pmH"/>
+                            <constraint firstAttribute="trailing" secondItem="nxM-pe-NXq" secondAttribute="trailing" constant="10" id="Wb8-uf-Ovc"/>
+                            <constraint firstItem="bRY-T5-a93" firstAttribute="centerY" secondItem="iw9-Me-6d9" secondAttribute="centerY" id="cyo-dt-dsa"/>
+                            <constraint firstAttribute="bottom" secondItem="nxM-pe-NXq" secondAttribute="bottom" constant="9" id="fZz-Mg-rfJ"/>
+                            <constraint firstAttribute="bottom" secondItem="bvr-9B-JU8" secondAttribute="bottom" constant="9" id="jVd-md-NjK"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bRY-T5-a93" secondAttribute="trailing" constant="10" id="kpn-4q-ZWo"/>
+                            <constraint firstItem="nxM-pe-NXq" firstAttribute="top" secondItem="Gus-iu-Se0" secondAttribute="bottom" constant="5" id="orF-dZ-XLm"/>
+                            <constraint firstItem="Gus-iu-Se0" firstAttribute="top" secondItem="its-l1-tpd" secondAttribute="bottom" constant="19.5" id="pof-DC-4n6"/>
+                            <constraint firstItem="iw9-Me-6d9" firstAttribute="top" secondItem="Cmh-pN-mIv" secondAttribute="top" constant="9" id="rIV-Cw-wDB"/>
+                            <constraint firstItem="bvr-9B-JU8" firstAttribute="leading" secondItem="Cmh-pN-mIv" secondAttribute="leading" constant="10" id="uT6-ob-mHJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Cmh-pN-mIv" firstAttribute="leading" secondItem="8PY-UM-MVI" secondAttribute="leading" constant="3" id="0B9-RV-skd"/>
+                    <constraint firstAttribute="bottom" secondItem="Cmh-pN-mIv" secondAttribute="bottom" constant="3" id="XIv-i9-fHe"/>
+                    <constraint firstAttribute="trailing" secondItem="Cmh-pN-mIv" secondAttribute="trailing" constant="3" id="ehX-Pz-qmW"/>
+                    <constraint firstItem="Cmh-pN-mIv" firstAttribute="top" secondItem="8PY-UM-MVI" secondAttribute="top" constant="3" id="tPW-o5-rnt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="NewsView" destination="Cmh-pN-mIv" id="a6N-kg-M0H"/>
+                <outlet property="autorAvatar" destination="iw9-Me-6d9" id="SqW-fO-f1Z"/>
+                <outlet property="autorName" destination="bRY-T5-a93" id="T4U-mh-KqB"/>
+                <outlet property="likeView" destination="nxM-pe-NXq" id="dvZ-Bs-wnE"/>
+                <outlet property="nameNews" destination="its-l1-tpd" id="8uq-63-HqI"/>
+                <outlet property="photoNews" destination="Gus-iu-Se0" id="jdw-rf-Uwb"/>
+                <outlet property="viewNunber" destination="bvr-9B-JU8" id="out-IC-2oe"/>
+            </connections>
+            <point key="canvasLocation" x="-50.000000000000007" y="138.95089285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+    </resources>
+</document>
