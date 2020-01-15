@@ -20,7 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - Kingfisher
-  - PromiseKit (~> 6.8)
+  - PromiseKit
   - RealmSwift
   - SwiftKeychainWrapper
 
@@ -39,6 +39,6 @@ SPEC CHECKSUMS:
   RealmSwift: 402f1e379a8ef82c635313037b043f0f06de880c
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: 00a81db27314614d527093439e1349e5249f0669
+PODFILE CHECKSUM: b5d77f9ff4c174e3c23172ebbf7e8538f88e121e
 
 COCOAPODS: 1.8.4

@@ -7,7 +7,8 @@ target 'MyVk' do
   pod 'SwiftKeychainWrapper'
   pod 'RealmSwift'
   pod 'Kingfisher'
-  pod "PromiseKit", "~> 6.8"
+  pod "PromiseKit"
+
 
   # Pods for MyVk
 
