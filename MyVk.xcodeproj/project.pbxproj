@@ -22,6 +22,7 @@
 		331B6F4F233D4DEB00D36CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331B6F4D233D4DEB00D36CC0 /* Main.storyboard */; };
 		331B6F51233D4DEC00D36CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331B6F50233D4DEC00D36CC0 /* Assets.xcassets */; };
 		331B6F54233D4DEC00D36CC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331B6F52233D4DEC00D36CC0 /* LaunchScreen.storyboard */; };
+		3331749323D454D400354966 /* ImageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331749223D454D400354966 /* ImageServise.swift */; };
 		334CBABA2351C82400535239 /* OnePhotoSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334CBAB92351C82400535239 /* OnePhotoSwipeView.swift */; };
 		335809FB2381369F00827E06 /* DBRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335809FA2381369F00827E06 /* DBRealm.swift */; };
 		337145E9236D5F0300D3B160 /* VKAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337145E8236D5F0300D3B160 /* VKAPI.swift */; };
@@ -64,6 +65,7 @@
 		331B6F50233D4DEC00D36CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		331B6F53233D4DEC00D36CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		331B6F55233D4DEC00D36CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3331749223D454D400354966 /* ImageServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServise.swift; sourceTree = "<group>"; };
 		334CBAB92351C82400535239 /* OnePhotoSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePhotoSwipeView.swift; sourceTree = "<group>"; };
 		335809FA2381369F00827E06 /* DBRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRealm.swift; sourceTree = "<group>"; };
 		337145E8236D5F0300D3B160 /* VKAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPI.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				335809FA2381369F00827E06 /* DBRealm.swift */,
 				338F9BB3238461E300EC2141 /* FileStorage.swift */,
 				33A43DA523C3319F00357BD1 /* OperationsVK.swift */,
+				3331749223D454D400354966 /* ImageServise.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				334CBABA2351C82400535239 /* OnePhotoSwipeView.swift in Sources */,
 				330FA2EA23451CA200170C06 /* LikeView.swift in Sources */,
 				335809FB2381369F00827E06 /* DBRealm.swift in Sources */,
+				3331749323D454D400354966 /* ImageServise.swift in Sources */,
 				33EE23B02340D54A0041399E /* GroupTableViewCell.swift in Sources */,
 				33EE23B22340DCC30041399E /* FriendsTableController.swift in Sources */,
 				33EE23A62340ADE00041399E /* AllGroupsTableController.swift in Sources */,
