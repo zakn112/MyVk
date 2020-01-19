@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+
 class FriendsTableController: UITableViewController, UISearchBarDelegate {
 
 
@@ -47,28 +48,44 @@ class FriendsTableController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.global().async {
-            self.vkAPI.getFriendsList() { [weak self] users in
+        
+        PromiseVK.shared.getFriendListJSON()
+         .then{ (data, response) in
+            PromiseVK.shared.parseFriendList(data: data, response: response)
+        }.then{ (users) in
+            PromiseVK.shared.saveFriendListDataBase(users: users)
+        }.done(on: DispatchQueue.main){ (usersBase) in
+            self.friendsVK = usersBase
+            self.createSections()
+            self.tableViewFriends.reloadData()
+        }.catch{(error) in
+            print(error)
+        }
+    
+        
+//        DispatchQueue.global().async {
+//            self.vkAPI.getFriendsList() { [weak self] users in
 // Обновление перенесено в обработку оповещения об из менении
 //            DispatchQueue.main.async {
 //                self?.friendsVK = DBRealm.shared.getFriendsList()
 //                self?.createSections()
 //                self?.tableViewFriends.reloadData()
 //            }
-        }
-        }
+//        }
+//        }
+        
         tableViewFriends.delegate = self
         tableViewFriends.dataSource = self
         searchBarFriends.delegate = self
         
        
-        friendsVK = DBRealm.shared.getFriendsList()
-        self.tokenFriendsVK = friendsVK?.observe{  (changes: RealmCollectionChange) in
-            //self.friendsVK = DBRealm.shared.getFriendsList()
-            self.createSections()
-            self.tableViewFriends.reloadData()
-         
-        }
+//        friendsVK = DBRealm.shared.getFriendsList()
+//        self.tokenFriendsVK = friendsVK?.observe{  (changes: RealmCollectionChange) in
+//            //self.friendsVK = DBRealm.shared.getFriendsList()
+//            self.createSections()
+//            self.tableViewFriends.reloadData()
+//
+//        }
 
         createSections()
     }
