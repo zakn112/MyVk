@@ -65,7 +65,7 @@ class ImageServise{
     }
     
     
-    fileprivate func loadPhoto(imageCache: ImageCacheVK, webUrl: String) {
+    fileprivate func loadPhoto(imageView: UIImageView, webUrl: String) {
         DispatchQueue.global().async {
             let url = URL(string: webUrl)
             if let data = try? Data(contentsOf: url!)
@@ -73,43 +73,26 @@ class ImageServise{
                 let image = UIImage(data: data)
                 self.images[webUrl] = image
                 self.saveImageToChache(url: webUrl, image: image!)
-                imageCache.image = image
+                DispatchQueue.main.async {
+                    imageView.image = image
+                }
             }
         }
     }
 
-    
-}
 
-class ImageCacheVK{
-    let imageView: UIImageView
-    let url: String
-    var image: UIImage?{
-        didSet{
-            DispatchQueue.main.async{
-                self.imageView.image = self.image
-                self.imageView.contentMode = .scaleAspectFit
-            }
-        }
-    }
-    
-    let defaultImage = #imageLiteral(resourceName: "defaoltImage")
-    
-    init(imageView: UIImageView, url: String) {
-        self.imageView = imageView
-        self.url = url
+    func getImage(imageView: UIImageView, url: String) {
+        
+        let defaultImage = #imageLiteral(resourceName: "defaoltImage")
         
         if let imageCache = ImageServise.shared.images[url] {
-            self.image = imageCache
+            imageView.image = imageCache
         } else if let imageCache = ImageServise.shared.getImageFromChache(url: url) {
-            self.image = imageCache
+            imageView.image = imageCache
         } else {
-            self.image = defaultImage
-            ImageServise.shared.loadPhoto(imageCache: self, webUrl: url)
+            imageView.image = defaultImage
+            ImageServise.shared.loadPhoto(imageView: imageView, webUrl: url)
         }
         
-        self.imageView.image = image
-        
     }
-    
 }

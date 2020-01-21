@@ -68,7 +68,7 @@ class NewsTableController: UITableViewController {
         if let urlString = news[indexPath.row].photo_604 {
 //            let url = URL(string: urlString)
 //            cell.photoNews.kf.setImage(with: url)
-            let _ = ImageCacheVK(imageView: cell.photoNews, url: urlString)
+            ImageServise.shared.getImage(imageView: cell.photoNews, url: urlString)
             
         }
         cell.likeView.likeNumber = news[indexPath.row].likesNumber
