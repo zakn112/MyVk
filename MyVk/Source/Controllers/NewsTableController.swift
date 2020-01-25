@@ -63,9 +63,13 @@ class NewsTableController: UITableViewController {
         
         cell.autorName.text = news[indexPath.row].autorName
         cell.nameNews.text = news[indexPath.row].name
+        
+        
         if let urlString = news[indexPath.row].photo_604 {
-            let url = URL(string: urlString)
-            cell.photoNews.kf.setImage(with: url)
+//            let url = URL(string: urlString)
+//            cell.photoNews.kf.setImage(with: url)
+            ImageServise.shared.getImage(imageView: cell.photoNews, url: urlString)
+            
         }
         cell.likeView.likeNumber = news[indexPath.row].likesNumber
         cell.viewNunber.text = "Комментариев:\(news[indexPath.row].commentsNumber)"
