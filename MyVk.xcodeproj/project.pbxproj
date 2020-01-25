@@ -32,6 +32,7 @@
 		339B22CD2365C70700D8B4C6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B22CC2365C70700D8B4C6 /* Session.swift */; };
 		339B22D12365E4EC00D8B4C6 /* VKLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B22D02365E4EC00D8B4C6 /* VKLoginViewController.swift */; };
 		33A43DA623C3319F00357BD1 /* OperationsVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A43DA523C3319F00357BD1 /* OperationsVK.swift */; };
+		33D68D8523D2DBE800EEE216 /* PromiseVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D68D8423D2DBE800EEE216 /* PromiseVK.swift */; };
 		33E337D02352FEFB00626B3F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E337CF2352FEFB00626B3F /* CustomNavigationController.swift */; };
 		33E337D32353023F00626B3F /* CustomPushTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E337D22353023F00626B3F /* CustomPushTransitionAnimator.swift */; };
 		33E337D52353026400626B3F /* CustomPopTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E337D42353026400626B3F /* CustomPopTransitionAnimator.swift */; };
@@ -74,6 +75,7 @@
 		339B22CC2365C70700D8B4C6 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		339B22D02365E4EC00D8B4C6 /* VKLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginViewController.swift; sourceTree = "<group>"; };
 		33A43DA523C3319F00357BD1 /* OperationsVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsVK.swift; sourceTree = "<group>"; };
+		33D68D8423D2DBE800EEE216 /* PromiseVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseVK.swift; sourceTree = "<group>"; };
 		33E337CF2352FEFB00626B3F /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		33E337D22353023F00626B3F /* CustomPushTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushTransitionAnimator.swift; sourceTree = "<group>"; };
 		33E337D42353026400626B3F /* CustomPopTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopTransitionAnimator.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				335809FA2381369F00827E06 /* DBRealm.swift */,
 				338F9BB3238461E300EC2141 /* FileStorage.swift */,
 				33A43DA523C3319F00357BD1 /* OperationsVK.swift */,
+				33D68D8423D2DBE800EEE216 /* PromiseVK.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				33EE23A92340CCFC0041399E /* Users.swift in Sources */,
 				330FA2E82343C10A00170C06 /* AvatarView.swift in Sources */,
 				33EE23C023413C600041399E /* FotoCollectionController.swift in Sources */,
+				33D68D8523D2DBE800EEE216 /* PromiseVK.swift in Sources */,
 				330FA2E323427A3500170C06 /* PhotoCollectionViewCell.swift in Sources */,
 				33819573234D07F300D3FBAB /* Photos.swift in Sources */,
 				338F9BB4238461E300EC2141 /* FileStorage.swift in Sources */,
