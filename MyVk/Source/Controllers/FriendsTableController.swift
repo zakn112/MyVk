@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+
 class FriendsTableController: UITableViewController, UISearchBarDelegate {
 
 
@@ -49,7 +50,7 @@ class FriendsTableController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         PromiseVK.shared.getFriendListJSON()
-            .then(on: DispatchQueue.global()){ (data, response) in
+         .then{ (data, response) in
             PromiseVK.shared.parseFriendList(data: data, response: response)
         }.then{ (users) in
             PromiseVK.shared.saveFriendListDataBase(users: users)
@@ -78,8 +79,9 @@ class FriendsTableController: UITableViewController, UISearchBarDelegate {
         searchBarFriends.delegate = self
         
        
-        friendsVK = DBRealm.shared.getFriendsList()
+//        friendsVK = DBRealm.shared.getFriendsList()
 //        self.tokenFriendsVK = friendsVK?.observe{  (changes: RealmCollectionChange) in
+//            //self.friendsVK = DBRealm.shared.getFriendsList()
 //            self.createSections()
 //            self.tableViewFriends.reloadData()
 //
