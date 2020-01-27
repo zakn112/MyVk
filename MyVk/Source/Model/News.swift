@@ -22,6 +22,14 @@ class NewsVK{
     var photo_604:String?
     var autorName:String?
     var autorAvatar:String?
+    var widthPhoto:Int?
+    var heightPhoto:Int?
+    var aspectRatio: CGFloat? {
+        guard let height = heightPhoto, let width = widthPhoto else {
+            return nil
+        }
+        return CGFloat(height)/CGFloat(width)
+    }
     
     
     init(json: [String: Any], profiles: [[String: Any]], groups: [[String: Any]]) {
@@ -63,6 +71,8 @@ class NewsVK{
                         //                    {
                         //                        self.foto = UIImage(data: data)
                         //                    }
+                        widthPhoto = attachPhoto["width"] as? Int ?? 0
+                        heightPhoto = attachPhoto["height"] as? Int ?? 0
                     }
                 }
                 

@@ -19,8 +19,11 @@
                         <rect key="frame" x="3" y="3" width="365" height="305"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="its-l1-tpd">
-                                <rect key="frame" x="10" y="56.5" width="42" height="20.5"/>
+                                <rect key="frame" x="10" y="56.5" width="42" height="27"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="5LS-pd-Vsv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gus-iu-Se0">
-                                <rect key="frame" x="10" y="96.5" width="345" height="174.5"/>
+                                <rect key="frame" x="10" y="103" width="345" height="168"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nxM-pe-NXq" customClass="LikeView" customModule="MyVk" customModuleProvider="target">
@@ -59,6 +62,13 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="imageHaveLike" value="heart.fill" catalog="system"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dha-FP-uGV">
+                                <rect key="frame" x="275" y="89" width="76" height="19"/>
+                                <state key="normal" title="show more"/>
+                                <connections>
+                                    <action selector="showMore:" destination="Ulx-FD-6VB" eventType="touchUpInside" id="nzK-ik-xTE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -71,6 +81,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="its-l1-tpd" secondAttribute="trailing" constant="10" id="OvL-f9-C69"/>
                             <constraint firstItem="its-l1-tpd" firstAttribute="top" secondItem="bRY-T5-a93" secondAttribute="bottom" constant="17" id="QBF-jW-VGy"/>
                             <constraint firstItem="its-l1-tpd" firstAttribute="leading" secondItem="Cmh-pN-mIv" secondAttribute="leading" constant="10" id="QMd-hP-pmH"/>
+                            <constraint firstItem="Dha-FP-uGV" firstAttribute="bottom" secondItem="its-l1-tpd" secondAttribute="bottom" constant="24" id="S6S-U3-LHZ"/>
                             <constraint firstAttribute="trailing" secondItem="nxM-pe-NXq" secondAttribute="trailing" constant="10" id="Wb8-uf-Ovc"/>
                             <constraint firstItem="bRY-T5-a93" firstAttribute="centerY" secondItem="iw9-Me-6d9" secondAttribute="centerY" id="cyo-dt-dsa"/>
                             <constraint firstAttribute="bottom" secondItem="nxM-pe-NXq" secondAttribute="bottom" constant="9" id="fZz-Mg-rfJ"/>
@@ -89,6 +100,7 @@
                     <constraint firstAttribute="bottom" secondItem="Cmh-pN-mIv" secondAttribute="bottom" constant="3" id="XIv-i9-fHe"/>
                     <constraint firstAttribute="trailing" secondItem="Cmh-pN-mIv" secondAttribute="trailing" constant="3" id="ehX-Pz-qmW"/>
                     <constraint firstItem="Cmh-pN-mIv" firstAttribute="top" secondItem="8PY-UM-MVI" secondAttribute="top" constant="3" id="tPW-o5-rnt"/>
+                    <constraint firstAttribute="trailing" secondItem="Dha-FP-uGV" secondAttribute="trailing" constant="10" id="ugn-IO-mIa"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,7 +110,9 @@
                 <outlet property="autorName" destination="bRY-T5-a93" id="T4U-mh-KqB"/>
                 <outlet property="likeView" destination="nxM-pe-NXq" id="dvZ-Bs-wnE"/>
                 <outlet property="nameNews" destination="its-l1-tpd" id="8uq-63-HqI"/>
+                <outlet property="newsNameLabelHeightConstrain" destination="5LS-pd-Vsv" id="xQr-64-kaG"/>
                 <outlet property="photoNews" destination="Gus-iu-Se0" id="jdw-rf-Uwb"/>
+                <outlet property="showMoreButton" destination="Dha-FP-uGV" id="TJL-xb-kbT"/>
                 <outlet property="viewNunber" destination="bvr-9B-JU8" id="out-IC-2oe"/>
             </connections>
             <point key="canvasLocation" x="-50.000000000000007" y="138.95089285714286"/>

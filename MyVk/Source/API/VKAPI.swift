@@ -156,7 +156,7 @@ class VKAPI {
         urlComponents.queryItems = [
             URLQueryItem(name: "access_token", value: Session.instance.token),
             URLQueryItem(name: "v", value: "5.68"),
-            URLQueryItem(name: "filters", value: "post,photo"),
+            URLQueryItem(name: "filters", value: "post"),
             URLQueryItem(name: "start_from", value: String(start_from)),
             URLQueryItem(name: "count", value: "10"),
             URLQueryItem(name: "fields", value: "name,photo_50")
