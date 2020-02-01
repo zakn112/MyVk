@@ -31,6 +31,11 @@ class NewsVK{
         return CGFloat(height)/CGFloat(width)
     }
     
+    var isShowMore = false
+    var newsLabelHightIsSowMore: CGFloat?
+    var cellHeightIsSowMore: CGFloat?
+    
+    
     
     init(json: [String: Any], profiles: [[String: Any]], groups: [[String: Any]]) {
         

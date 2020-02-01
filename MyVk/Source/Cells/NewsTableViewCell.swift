@@ -10,8 +10,8 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
 
-    private var isShowMore = false
-    var cellHeight: CGFloat?
+    var newsVK: NewsVK?
+    weak var parentTable: UITableView?
     
     @IBOutlet weak var photoNews: UIImageView!
     
@@ -37,8 +37,7 @@ class NewsTableViewCell: UITableViewCell {
         nameNews.text = ""
         autorName.text = ""
         autorAvatar.image = nil
-        isShowMore = false
-        newsNameLabelHeightConstrain.constant = 40
+        
         
     }
     
@@ -47,26 +46,48 @@ class NewsTableViewCell: UITableViewCell {
         NewsView.layer.borderColor = UIColor.gray.cgColor
         NewsView.layer.borderWidth = 1
         NewsView.layer.cornerRadius = 15
-        newsNameLabelHeightConstrain.constant = 40
-       
+        
+    }
+    
+    func setNewsLabelSize(){
+        
+        guard let newsVK = newsVK  else { return }
+        
+        let labelSize = getLabelSize(text: nameNews.text!, font: nameNews.font)
+        if labelSize.height < 40 {
+            self.newsNameLabelHeightConstrain.constant = labelSize.height
+            self.showMoreButton.isHidden = true
+        }else{
+            if newsVK.isShowMore {
+                self.newsNameLabelHeightConstrain.constant = newsVK.newsLabelHightIsSowMore ?? 40
+            }else{
+                self.newsNameLabelHeightConstrain.constant = 40
+            }
+            self.showMoreButton.isHidden = false
+        }
     }
     
     @IBAction func showMore(_ sender: Any) {
         
-        if !isShowMore {
-            let LabelSize = getLabelSize(text: nameNews.text!, font: nameNews.font)
+        guard let newsVK = newsVK  else { return }
+        
+        if !newsVK.isShowMore {
+            let labelSize = getLabelSize(text: nameNews.text!, font: nameNews.font)
             
-            let margin = LabelSize.height - nameNews.frame.size.height
+            let marginIsSowMore = labelSize.height - nameNews.frame.size.height
             
-            self.cellHeight = self.frame.size.height + margin
+            newsVK.newsLabelHightIsSowMore = self.newsNameLabelHeightConstrain.constant + marginIsSowMore
+            
+            let cellHeight = self.frame.size.height + marginIsSowMore
+            newsVK.cellHeightIsSowMore = cellHeight
             
             self.layoutIfNeeded()
             
             UIView.animate(withDuration: 0.5, delay: 0, animations: {
               
                 self.showMoreButton.setTitle("show less", for: .normal)
-                self.newsNameLabelHeightConstrain.constant += margin
-                self.frame = CGRect(origin: self.frame.origin, size: CGSize(width: self.frame.size.width, height: self.cellHeight!))
+                self.newsNameLabelHeightConstrain.constant += marginIsSowMore
+                self.frame = CGRect(origin: self.frame.origin, size: CGSize(width: self.frame.size.width, height: cellHeight))
                 self.layoutIfNeeded()
             })
             
@@ -81,10 +102,15 @@ class NewsTableViewCell: UITableViewCell {
                 self.frame = CGRect(origin: self.frame.origin, size: CGSize(width: self.frame.size.width, height: self.frame.size.height - margin))
                 self.layoutIfNeeded()
             })
+            newsVK.cellHeightIsSowMore = nil
+            newsVK.newsLabelHightIsSowMore = nil
         }
         
-        isShowMore = !isShowMore
-        
+        newsVK.isShowMore = !newsVK.isShowMore
+       
+        if let parentTable = parentTable {
+            parentTable.reloadData()
+        }
     }
     
     func getLabelSize(text: String, font: UIFont) -> CGSize {
