@@ -28,12 +28,12 @@ class FotoCollectionController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UINib(nibName: "PhotoCell", bundle: nil), forCellWithReuseIdentifier: "PhotoCell")
         
-//        vkAPI.getPhotosFriend(friendID: friend!.id) { [weak self] photos in
-//            DispatchQueue.main.async {
-//                self?.photos = DBRealm.shared.getUserPhotos(user: self?.friend ?? UserVK())
-//                self?.collectionView.reloadData()
-//            }
-//        }
+        vkAPI.getPhotosFriend(friendID: friend!.id) { [weak self] photos in
+            DispatchQueue.main.async {
+                self?.photos = DBRealm.shared.getUserPhotos(user: self?.friend ?? UserVK())
+                self?.collectionView.reloadData()
+            }
+        }
         
         
         let getDataPhotoOperation = GetDataPhotoOperation(friendID: friend!.id)

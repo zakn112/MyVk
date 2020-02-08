@@ -134,6 +134,30 @@ class FriendsTableController: UITableViewController, UISearchBarDelegate {
         }
         
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+            if ident == "FriendPhotosCollection" {
+                if let index = tableView.indexPathForSelectedRow {
+                    for sect in self.sections{
+                        if sect.value.0 == index.section {
+                            if let friend = sect.value.1[index.row] {
+                                let newsController = NewsController(friend: friend)
+                                newsController.modalTransitionStyle = .crossDissolve
+                                present(newsController, animated: false)
+                            }
+                        }
+                    }
+                }
+                
+                //временно отключаем переход на коллекчию, для реализации просмотра списка фото через AsyncDisplayKit
+                return false
+                
+            }
+        }
+        
+        return true
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         self.sections.count
