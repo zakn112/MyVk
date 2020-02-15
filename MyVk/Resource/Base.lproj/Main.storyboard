@@ -236,7 +236,7 @@
                                 <connections>
                                     <outlet property="userAvatar" destination="Ioj-CR-9ft" id="7Bl-Fg-IzD"/>
                                     <outlet property="userName" destination="7e0-vR-EVb" id="baB-ak-Slj"/>
-                                    <segue destination="0Kh-XL-iYJ" kind="show" id="000-eC-WSj"/>
+                                    <segue destination="0Kh-XL-iYJ" kind="show" identifier="FriendPhotosCollection" id="000-eC-WSj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

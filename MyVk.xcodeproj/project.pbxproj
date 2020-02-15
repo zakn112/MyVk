@@ -1,4 +1,4 @@
-	// !$*UTF8*$!
+// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -25,6 +25,7 @@
 		3331749323D454D400354966 /* ImageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331749223D454D400354966 /* ImageServise.swift */; };
 		334CBABA2351C82400535239 /* OnePhotoSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334CBAB92351C82400535239 /* OnePhotoSwipeView.swift */; };
 		335809FB2381369F00827E06 /* DBRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335809FA2381369F00827E06 /* DBRealm.swift */; };
+		335F7E6923E6AFAD00E8DAA7 /* FriendPhotosASTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F7E6823E6AFAD00E8DAA7 /* FriendPhotosASTableController.swift */; };
 		337145E9236D5F0300D3B160 /* VKAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337145E8236D5F0300D3B160 /* VKAPI.swift */; };
 		33819571234CFB6E00D3FBAB /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33819570234CFB6E00D3FBAB /* PhotoCell.xib */; };
 		33819573234D07F300D3FBAB /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33819572234D07F300D3FBAB /* Photos.swift */; };
@@ -69,6 +70,7 @@
 		3331749223D454D400354966 /* ImageServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServise.swift; sourceTree = "<group>"; };
 		334CBAB92351C82400535239 /* OnePhotoSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePhotoSwipeView.swift; sourceTree = "<group>"; };
 		335809FA2381369F00827E06 /* DBRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRealm.swift; sourceTree = "<group>"; };
+		335F7E6823E6AFAD00E8DAA7 /* FriendPhotosASTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotosASTableController.swift; sourceTree = "<group>"; };
 		337145E8236D5F0300D3B160 /* VKAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPI.swift; sourceTree = "<group>"; };
 		33819570234CFB6E00D3FBAB /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		33819572234D07F300D3FBAB /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				33949EA22351BD1400109C8A /* onePhotoController.swift */,
 				33E337CF2352FEFB00626B3F /* CustomNavigationController.swift */,
 				339B22D02365E4EC00D8B4C6 /* VKLoginViewController.swift */,
+				335F7E6823E6AFAD00E8DAA7 /* FriendPhotosASTableController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -263,7 +266,7 @@
 				331B6F40233D4DEB00D36CC0 /* Sources */,
 				331B6F41233D4DEB00D36CC0 /* Frameworks */,
 				331B6F42233D4DEB00D36CC0 /* Resources */,
-				5358BC58A158A252BFD4969A /* [CP] Embed Pods Frameworks */,
+				251C73723870C7CF4ED53319 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,6 +327,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		251C73723870C7CF4ED53319 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyVk/Pods-MyVk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyVk/Pods-MyVk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyVk/Pods-MyVk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4B4AACF322DF93E2D37FF8A7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,23 +364,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5358BC58A158A252BFD4969A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyVk/Pods-MyVk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyVk/Pods-MyVk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyVk/Pods-MyVk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -387,6 +390,7 @@
 				330FA2F6234886AB00170C06 /* NewsTableViewCell.swift in Sources */,
 				334CBABA2351C82400535239 /* OnePhotoSwipeView.swift in Sources */,
 				330FA2EA23451CA200170C06 /* LikeView.swift in Sources */,
+				335F7E6923E6AFAD00E8DAA7 /* FriendPhotosASTableController.swift in Sources */,
 				335809FB2381369F00827E06 /* DBRealm.swift in Sources */,
 				3331749323D454D400354966 /* ImageServise.swift in Sources */,
 				33EE23B02340D54A0041399E /* GroupTableViewCell.swift in Sources */,

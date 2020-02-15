@@ -54,7 +54,7 @@ class VKAPI {
         task.resume()
     }
     
-    func getPhotosFriend(friendID: Int, completion: @escaping ([PhotoVK]) -> Void) -> () {
+    func getPhotosFriend(friendID: Int, completion: @escaping ([PhotoVK_]) -> Void) -> () {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
@@ -80,26 +80,26 @@ class VKAPI {
             let jsonMain = json as! [String: Any]
             let response = jsonMain["response"] as! [String: Any]
             let array = response["items"] as! [[String: Any]]
-            let photos = array.map { PhotoVK(json: $0) }
+            let photos = array.map { PhotoVK_(json: $0) }
             
-            var photoNumber = 1
-            for photo in photos {
-                let fileName = "\(friendID)\(photoNumber)_photo_130"
-                let folder = "photos"
-                
-                FileStorage.shared.saveFile(webUrl: photo.Path130, fileName: fileName, folder: folder)
-               
-                photo.Path130Local = folder + "/" + fileName
-               
-                photoNumber += 1
-            }
+//            var photoNumber = 1
+//            for photo in photos {
+//                let fileName = "\(friendID)\(photoNumber)_photo_130"
+//                let folder = "photos"
+//
+//                FileStorage.shared.saveFile(webUrl: photo.Path130, fileName: fileName, folder: folder)
+//
+//                photo.Path130Local = folder + "/" + fileName
+//
+//                photoNumber += 1
+//            }
             
-            DispatchQueue.main.async {
-               
-                let owner = DBRealm.shared.getUser(id: friendID)
-                DBRealm.shared.writeObjects(objects: photos, setProperties: ["User" : owner as Any])
-               
-            }
+//            DispatchQueue.main.async {
+//
+//                let owner = DBRealm.shared.getUser(id: friendID)
+//                DBRealm.shared.writeObjects(objects: photos, setProperties: ["User" : owner as Any])
+//
+//            }
             
             completion(photos)
         }

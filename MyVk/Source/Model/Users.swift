@@ -34,3 +34,5 @@ class UserVK: Object {
         return "id"
     }
 }
+
+

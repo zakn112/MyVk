@@ -84,7 +84,8 @@ class NewsTableController: UITableViewController {
                 }
             }
         }
-        
+        cell.parentTable = self.tableView
+        cell.newsVK = news[indexPath.row]
         cell.autorName.text = news[indexPath.row].autorName
         cell.nameNews.text = news[indexPath.row].name
         
@@ -98,15 +99,21 @@ class NewsTableController: UITableViewController {
        
         cell.likeView.likeNumber = news[indexPath.row].likesNumber
         cell.viewNunber.text = "Комментариев:\(news[indexPath.row].commentsNumber)"
+        
+        cell.setNewsLabelSize()
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        
+               
         // Вычисляем высоту
         guard let aspectRatio = news[indexPath.row].aspectRatio else {
             return UITableView.automaticDimension
+        }
+        
+        if let cellHeight = news[indexPath.row].cellHeightIsSowMore {
+            return cellHeight
         }
         
         let tableWidth = tableView.bounds.width
@@ -115,6 +122,7 @@ class NewsTableController: UITableViewController {
         return cellHeight
         
     }
+    
 // Бесконечный скролинг можно реализовать так, можно через prefetchDataSource
 //    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        let contentHeight = scrollView.contentSize.height
