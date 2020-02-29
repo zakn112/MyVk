@@ -17,7 +17,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         photoMainView.layer.masksToBounds = true
-        photoMainView.layer.borderColor = UIColor.gray.cgColor
+        photoMainView.layer.borderColor = UIColor.lightBlue.cgColor
         photoMainView.layer.borderWidth = 1
         photoMainView.layer.cornerRadius = 15
     }

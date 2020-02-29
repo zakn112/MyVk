@@ -43,7 +43,7 @@ class NewsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         NewsView.layer.masksToBounds = true
-        NewsView.layer.borderColor = UIColor.gray.cgColor
+        NewsView.layer.borderColor = UIColor.lightBlue.cgColor
         NewsView.layer.borderWidth = 1
         NewsView.layer.cornerRadius = 15
         

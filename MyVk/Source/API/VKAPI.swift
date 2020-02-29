@@ -107,7 +107,7 @@ class VKAPI {
         task.resume()
     }
     
-    func getGroupsList(completion: @escaping ([GroupsVK]) -> Void) -> () {
+    func getGroupsList(completion: @escaping ([GroupRealm]) -> Void) -> () {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.vk.com"
@@ -116,7 +116,7 @@ class VKAPI {
             URLQueryItem(name: "access_token", value: Session.instance.token),
             URLQueryItem(name: "v", value: "5.68"),
             URLQueryItem(name: "extended", value: "1"),
-            URLQueryItem(name: "count", value: "10")
+            URLQueryItem(name: "count", value: "20")
         ]
         
         let configuration = URLSessionConfiguration.default
@@ -132,7 +132,7 @@ class VKAPI {
             let jsonMain = json as! [String: Any]
             let response = jsonMain["response"] as! [String: Any]
             let array = response["items"] as! [[String: Any]]
-            let groups = array.map { GroupsVK(json: $0) }
+            let groups = array.map { GroupRealm(json: $0) }
             
             for group in groups {
                 let fileName = "g\(group.id)_photo_50"
@@ -189,7 +189,7 @@ class VKAPI {
         task.resume()
     }
     
-    func getSearchGroupsList(searchString: String, completion: @escaping ([GroupsVK]) -> Void) -> () {
+    func getSearchGroupsList(searchString: String, completion: @escaping ([GroupRealm]) -> Void) -> () {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.vk.com"
@@ -212,7 +212,7 @@ class VKAPI {
             let jsonMain = json as! [String: Any]
             let response = jsonMain["response"] as! [String: Any]
             let array = response["items"] as! [[String: Any]]
-            let groups = array.map { GroupsVK(json: $0) }
+            let groups = array.map { GroupRealm(json: $0) }
             completion(groups)
         }
         

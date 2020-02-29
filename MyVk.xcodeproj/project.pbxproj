@@ -22,6 +22,11 @@
 		331B6F4F233D4DEB00D36CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331B6F4D233D4DEB00D36CC0 /* Main.storyboard */; };
 		331B6F51233D4DEC00D36CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331B6F50233D4DEC00D36CC0 /* Assets.xcassets */; };
 		331B6F54233D4DEC00D36CC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331B6F52233D4DEC00D36CC0 /* LaunchScreen.storyboard */; };
+		331CCFF2240A41F1009CB702 /* FlyWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CCFF1240A41F1009CB702 /* FlyWeight.swift */; };
+		331CCFF4240A469F009CB702 /* GroupsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CCFF3240A469F009CB702 /* GroupsAdapter.swift */; };
+		331CCFF7240A4713009CB702 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CCFF6240A4713009CB702 /* Group.swift */; };
+		331CCFF9240A5A62009CB702 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CCFF8240A5A62009CB702 /* GroupViewModel.swift */; };
+		331CCFFB240A5AFF009CB702 /* GroupViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CCFFA240A5AFF009CB702 /* GroupViewModelFactory.swift */; };
 		3331749323D454D400354966 /* ImageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331749223D454D400354966 /* ImageServise.swift */; };
 		334CBABA2351C82400535239 /* OnePhotoSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334CBAB92351C82400535239 /* OnePhotoSwipeView.swift */; };
 		335809FB2381369F00827E06 /* DBRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335809FA2381369F00827E06 /* DBRealm.swift */; };
@@ -67,6 +72,11 @@
 		331B6F50233D4DEC00D36CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		331B6F53233D4DEC00D36CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		331B6F55233D4DEC00D36CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		331CCFF1240A41F1009CB702 /* FlyWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyWeight.swift; sourceTree = "<group>"; };
+		331CCFF3240A469F009CB702 /* GroupsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsAdapter.swift; sourceTree = "<group>"; };
+		331CCFF6240A4713009CB702 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		331CCFF8240A5A62009CB702 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
+		331CCFFA240A5AFF009CB702 /* GroupViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModelFactory.swift; sourceTree = "<group>"; };
 		3331749223D454D400354966 /* ImageServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServise.swift; sourceTree = "<group>"; };
 		334CBAB92351C82400535239 /* OnePhotoSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePhotoSwipeView.swift; sourceTree = "<group>"; };
 		335809FA2381369F00827E06 /* DBRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRealm.swift; sourceTree = "<group>"; };
@@ -168,11 +178,32 @@
 		331B6F46233D4DEB00D36CC0 /* MyVk */ = {
 			isa = PBXGroup;
 			children = (
+				331CCFF0240A4166009CB702 /* Tools */,
 				331059A423408E9A00A4D1A2 /* Resource */,
 				331059A523408F3B00A4D1A2 /* Source */,
 				331B6F55233D4DEC00D36CC0 /* Info.plist */,
 			);
 			path = MyVk;
+			sourceTree = "<group>";
+		};
+		331CCFF0240A4166009CB702 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				331CCFF1240A41F1009CB702 /* FlyWeight.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		331CCFF5240A46EB009CB702 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				331CCFF3240A469F009CB702 /* GroupsAdapter.swift */,
+				33EE23AA2340CD760041399E /* Groups.swift */,
+				331CCFF6240A4713009CB702 /* Group.swift */,
+				331CCFF8240A5A62009CB702 /* GroupViewModel.swift */,
+				331CCFFA240A5AFF009CB702 /* GroupViewModelFactory.swift */,
+			);
+			path = Groups;
 			sourceTree = "<group>";
 		};
 		3360ADCA2340941700152B92 /* Controllers */ = {
@@ -218,7 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				33EE23A82340CCFC0041399E /* Users.swift */,
-				33EE23AA2340CD760041399E /* Groups.swift */,
+				331CCFF5240A46EB009CB702 /* Groups */,
 				330FA2F1234884F300170C06 /* News.swift */,
 				33819572234D07F300D3FBAB /* Photos.swift */,
 				339B22CC2365C70700D8B4C6 /* Session.swift */,
@@ -376,12 +407,16 @@
 				330FA2EC2347B4DC00170C06 /* FriendsSectionHeaderView.swift in Sources */,
 				331059A92340915400A4D1A2 /* LoginViewController.swift in Sources */,
 				331B6F48233D4DEB00D36CC0 /* AppDelegate.swift in Sources */,
+				331CCFF2240A41F1009CB702 /* FlyWeight.swift in Sources */,
 				33A43DA623C3319F00357BD1 /* OperationsVK.swift in Sources */,
 				33949EA32351BD1500109C8A /* onePhotoController.swift in Sources */,
 				33EE23BE234101C60041399E /* GroupeTableController.swift in Sources */,
+				331CCFFB240A5AFF009CB702 /* GroupViewModelFactory.swift in Sources */,
 				33E337D02352FEFB00626B3F /* CustomNavigationController.swift in Sources */,
 				33EE23A92340CCFC0041399E /* Users.swift in Sources */,
 				330FA2E82343C10A00170C06 /* AvatarView.swift in Sources */,
+				331CCFF9240A5A62009CB702 /* GroupViewModel.swift in Sources */,
+				331CCFF7240A4713009CB702 /* Group.swift in Sources */,
 				33EE23C023413C600041399E /* FotoCollectionController.swift in Sources */,
 				33D68D8523D2DBE800EEE216 /* PromiseVK.swift in Sources */,
 				330FA2E323427A3500170C06 /* PhotoCollectionViewCell.swift in Sources */,
@@ -395,6 +430,7 @@
 				3331749323D454D400354966 /* ImageServise.swift in Sources */,
 				33EE23B02340D54A0041399E /* GroupTableViewCell.swift in Sources */,
 				33EE23B22340DCC30041399E /* FriendsTableController.swift in Sources */,
+				331CCFF4240A469F009CB702 /* GroupsAdapter.swift in Sources */,
 				33EE23A62340ADE00041399E /* AllGroupsTableController.swift in Sources */,
 				331B6F4A233D4DEB00D36CC0 /* SceneDelegate.swift in Sources */,
 				330FA2F82348B40100170C06 /* progressView.swift in Sources */,

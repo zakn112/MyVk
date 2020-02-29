@@ -36,10 +36,10 @@ class DBRealm {
         return friendsVK
     }
     
-    func getGroupsList() -> Results<GroupsVK>? {
+    func getGroupsList() -> Results<GroupRealm>? {
         let realm = try! Realm()
         
-        let groups = realm.objects(GroupsVK.self)
+        let groups = realm.objects(GroupRealm.self)
         
         return groups
     }

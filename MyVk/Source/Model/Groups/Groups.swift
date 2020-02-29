@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class GroupsVK: Object{
+class GroupRealm: Object{
     @objc dynamic var name:String = ""
     var photo:UIImage?
     @objc dynamic var id:Int = 0

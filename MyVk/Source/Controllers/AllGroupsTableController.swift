@@ -13,7 +13,7 @@ class AllGroupsTableController: UITableViewController, UISearchBarDelegate{
     
     @IBOutlet weak var SearchBarAllGroups: UISearchBar!
     
-    var groupeVKs = [GroupsVK]()
+    var groupVKs = [GroupRealm]()
     private let vkAPI = VKAPI()
     
     override func viewDidLoad() {
@@ -23,13 +23,13 @@ class AllGroupsTableController: UITableViewController, UISearchBarDelegate{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupeVKs.count
+        return groupVKs.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroupeCell", for: indexPath) as! GroupTableViewCell
-        cell.groupName.text = groupeVKs[indexPath.row].name
-        cell.groupeAvatar.image = groupeVKs[indexPath.row].photo
+        cell.groupName.text = groupVKs[indexPath.row].name
+        cell.groupeAvatar.image = groupVKs[indexPath.row].photo
         return cell
     }
     
@@ -41,7 +41,7 @@ class AllGroupsTableController: UITableViewController, UISearchBarDelegate{
         
         vkAPI.getSearchGroupsList(searchString: searchText) //строку поиска в интерфейс добавил позже
         { [weak self] groups in
-            self?.groupeVKs = groups
+            self?.groupVKs = groups
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }

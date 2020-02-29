@@ -121,7 +121,7 @@ class ImageNode: ASCellNode {
         photoImageNode.url = URL(string: resource.Path604)
         photoImageNode.contentMode = .scaleAspectFill
         photoImageNode.shouldRenderProgressImages = true
-        photoImageNode.borderColor = UIColor.gray.cgColor
+        photoImageNode.borderColor = UIColor.lightBlue.cgColor
         photoImageNode.borderWidth = 1
         photoImageNode.cornerRadius = 15
         addSubnode(photoImageNode)

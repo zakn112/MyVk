@@ -11,65 +11,37 @@ import RealmSwift
 
 class GroupeTableController: UITableViewController {
     
-    var groupeVKs: Results<GroupsVK>?
-    var tokenGroupeVKs: NotificationToken?
+    private let groupService = GroupsAdapter()
+    private let groupViewModelFactory = GroupViewModelFactory()
     
-    private let vkAPI = VKAPI()
+    var groupVKs = [GroupVK]()
+    private var groupVKViewModels = [GroupVKViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.global().async {
-            self.vkAPI.getGroupsList()
-                { [weak self] groups in
-                    //                DispatchQueue.main.async {
-                    //                    self?.groupeVKs = DBRealm.shared.getGroupsList()
-                    //                    self?.tableView.reloadData()
-                    //                }
-            }
+        
+        groupService.getGroups(){ [weak self] groupVKs in
+            guard let self = self else { return }
+
+            self.groupVKs = groupVKs
+            self.groupVKViewModels = self.groupViewModelFactory.constructViewModels(from: groupVKs)
+            self.tableView.reloadData()
         }
         
-        self.groupeVKs = DBRealm.shared.getGroupsList()
-        self.tokenGroupeVKs = groupeVKs?.observe{  (changes: RealmCollectionChange) in
-            
-            switch changes {
-            case .initial:
-                self.tableView.reloadData()
-            case .update(_, let deletions, let insertions, let modifications):
-                self.tableView.beginUpdates()
-                self.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
-                                           with: .automatic)
-                self.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
-                                           with: .automatic)
-                self.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
-                                           with: .automatic)
-                self.tableView.endUpdates()
-            case .error(let error):
-                print(error)
-            }
-            
-            
-        }
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if groupeVKs == nil {
-            return 0
-        }
-        else{
-        return groupeVKs!.count
-        }
+       
+        return groupVKViewModels.count
         
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupeCell", for: indexPath) as! GroupTableViewCell
         
-        let fm = FileManager.default
-        let docsurl = try! fm.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        let  avatarPath = "\(docsurl.path)/\(groupeVKs![indexPath.row].photo_50_str_local)"
-        
-        cell.groupName.text = groupeVKs![indexPath.row].name
-        cell.groupeAvatar.image = UIImage(contentsOfFile: avatarPath)
+        cell.groupName.text = groupVKViewModels[indexPath.row].name
+        cell.groupeAvatar.image = groupVKViewModels[indexPath.row].groupeAvatar
         
         return cell
     }
@@ -81,7 +53,7 @@ class GroupeTableController: UITableViewController {
             guard let allGroupsTableController = unwindSegue.source as? AllGroupsTableController else { return }
             guard let indexPath = allGroupsTableController.tableView.indexPathForSelectedRow else { return }
             
-            let groupe = allGroupsTableController.groupeVKs[indexPath.row]
+            let groupe = allGroupsTableController.groupVKs[indexPath.row]
 //            if !groupeVKs!.contains(where: { $0.name == groupe.name }) {
 //                groupeVKs.append(allGroupsTableController.groupeVKs[indexPath.row])
 //                tableView.insertRows(at: [IndexPath(row: groupeVKs!.count - 1, section: 0)], with: .fade)
