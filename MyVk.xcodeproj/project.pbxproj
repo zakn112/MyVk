@@ -23,6 +23,7 @@
 		331B6F51233D4DEC00D36CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331B6F50233D4DEC00D36CC0 /* Assets.xcassets */; };
 		331B6F54233D4DEC00D36CC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331B6F52233D4DEC00D36CC0 /* LaunchScreen.storyboard */; };
 		3331749323D454D400354966 /* ImageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331749223D454D400354966 /* ImageServise.swift */; };
+		3346B2822425F921004D6E66 /* VKAPIProtocolProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3346B2812425F921004D6E66 /* VKAPIProtocolProxy.swift */; };
 		334CBABA2351C82400535239 /* OnePhotoSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334CBAB92351C82400535239 /* OnePhotoSwipeView.swift */; };
 		335809FB2381369F00827E06 /* DBRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335809FA2381369F00827E06 /* DBRealm.swift */; };
 		335F7E6923E6AFAD00E8DAA7 /* FriendPhotosASTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F7E6823E6AFAD00E8DAA7 /* FriendPhotosASTableController.swift */; };
@@ -68,6 +69,7 @@
 		331B6F53233D4DEC00D36CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		331B6F55233D4DEC00D36CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3331749223D454D400354966 /* ImageServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServise.swift; sourceTree = "<group>"; };
+		3346B2812425F921004D6E66 /* VKAPIProtocolProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIProtocolProxy.swift; sourceTree = "<group>"; };
 		334CBAB92351C82400535239 /* OnePhotoSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePhotoSwipeView.swift; sourceTree = "<group>"; };
 		335809FA2381369F00827E06 /* DBRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRealm.swift; sourceTree = "<group>"; };
 		335F7E6823E6AFAD00E8DAA7 /* FriendPhotosASTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotosASTableController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				337145E8236D5F0300D3B160 /* VKAPI.swift */,
+				3346B2812425F921004D6E66 /* VKAPIProtocolProxy.swift */,
 				335809FA2381369F00827E06 /* DBRealm.swift */,
 				338F9BB3238461E300EC2141 /* FileStorage.swift */,
 				33A43DA523C3319F00357BD1 /* OperationsVK.swift */,
@@ -391,6 +394,7 @@
 				334CBABA2351C82400535239 /* OnePhotoSwipeView.swift in Sources */,
 				330FA2EA23451CA200170C06 /* LikeView.swift in Sources */,
 				335F7E6923E6AFAD00E8DAA7 /* FriendPhotosASTableController.swift in Sources */,
+				3346B2822425F921004D6E66 /* VKAPIProtocolProxy.swift in Sources */,
 				335809FB2381369F00827E06 /* DBRealm.swift in Sources */,
 				3331749323D454D400354966 /* ImageServise.swift in Sources */,
 				33EE23B02340D54A0041399E /* GroupTableViewCell.swift in Sources */,

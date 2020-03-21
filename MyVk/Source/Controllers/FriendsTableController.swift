@@ -19,7 +19,7 @@ class FriendsTableController: UITableViewController, UISearchBarDelegate {
     
     var tokenFriendsVK: NotificationToken?
     
-    private let vkAPI = VKAPI()
+    private let vkAPI = VKAPIProtocolProxy(vkAPI: VKAPI())
     
     private var sections = [String: (Int, [UserVK?])]()
  

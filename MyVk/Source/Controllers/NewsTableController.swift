@@ -15,7 +15,7 @@ class NewsTableController: UITableViewController {
     var next_from = ""
     var reloadData = false
     
-    private let vkAPI = VKAPI()
+    private let vkAPI = VKAPIProtocolProxy(vkAPI: VKAPI())
     
     func viewNextNews() {
         DispatchQueue.global().async {

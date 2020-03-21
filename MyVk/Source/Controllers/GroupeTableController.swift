@@ -14,7 +14,7 @@ class GroupeTableController: UITableViewController {
     var groupeVKs: Results<GroupsVK>?
     var tokenGroupeVKs: NotificationToken?
     
-    private let vkAPI = VKAPI()
+    private let vkAPI = VKAPIProtocolProxy(vkAPI: VKAPI())
     
     override func viewDidLoad() {
         super.viewDidLoad()

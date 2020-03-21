@@ -14,7 +14,7 @@ class AllGroupsTableController: UITableViewController, UISearchBarDelegate{
     @IBOutlet weak var SearchBarAllGroups: UISearchBar!
     
     var groupeVKs = [GroupsVK]()
-    private let vkAPI = VKAPI()
+    private let vkAPI = VKAPIProtocolProxy(vkAPI: VKAPI())
     
     override func viewDidLoad() {
         super.viewDidLoad()

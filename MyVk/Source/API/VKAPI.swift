@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class VKAPI {
+class VKAPI: VKAPIInterface {
     
     func getFriendsList(completion: @escaping ([UserVK]) -> Void) -> () {
         var urlComponents = URLComponents()

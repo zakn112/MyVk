@@ -20,7 +20,7 @@ class FotoCollectionController: UICollectionViewController {
     
     var operation = OperationQueue()
     
-    private let vkAPI = VKAPI()
+    private let vkAPI = VKAPIProtocolProxy(vkAPI: VKAPI())
     
     override func viewDidLoad() {
         super.viewDidLoad()

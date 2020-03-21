@@ -16,7 +16,7 @@ class NewsController: ASViewController<ASDisplayNode>, ASTableDelegate, ASTableD
     
     private var photos = [PhotoVK_]()
     
-    private let vkAPI = VKAPI()
+    private let vkAPI = VKAPIProtocolProxy(vkAPI: VKAPI())
     
     // Создаем дополнительный интерфейс для обращения к корневой ноде
     var tableNode: ASTableNode {
